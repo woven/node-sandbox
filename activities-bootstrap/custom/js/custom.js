@@ -48,7 +48,14 @@
   $(".timeago").timeago();
 
   $('.comment .close').click(function(){
-    $(this).closest('.comment').slideUp();
+    var comment = $(this).closest('.comment');
+    $(comment).slideUp(function(){
+      var comments = $(this).closest('.comments');
+      $(this).remove();
+      if(!$(comments).find('.comment').length){
+        $(comments).closest('.activity').find('.show-comments').fadeOut();
+      }
+    });
   });
 
   $('.activity .well > .close').click(function(){
