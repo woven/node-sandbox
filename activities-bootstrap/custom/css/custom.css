@@ -1,0 +1,80 @@
+.well .span4 {
+  width: 330px;
+}
+
+.comments.collapsed {
+  display: none;
+}
+
+.new .textarea{
+  position: relative;
+}
+
+/*.new .textarea .publish{
+  position: absolute;
+  right: 0;
+  bottom: 9px;
+  display: none;
+}*/
+
+.new {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar .company.brand {
+  float: right;
+}
+
+.well textarea.span4 {
+  width: 320px;
+}
+
+
+.comment .new {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.activity, .comment {
+  position: relative;
+}
+
+.activity .close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.comment .close {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+}
+
+.textarea-controls {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  border-top: 1px dotted #ccc;
+  width: 100%;
+  background-color: #efefef;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  height: 28px;
+  width: 468px;
+  margin-left: 1px;
+  overflow: hidden;
+}
+
+.well .textarea-controls{
+  width: 328px;
+}
+
+
+.textarea-controls .publish {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; 
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
