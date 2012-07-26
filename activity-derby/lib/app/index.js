@@ -51,7 +51,7 @@ get('/activities', function(page, model, params) {
             personObj=new Object();
             personObj.firstname=Math.random();
             myDummy.push(personObj);
-    };
+        };
 
         model.set('list',myDummy);
 
