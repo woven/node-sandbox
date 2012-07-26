@@ -49,11 +49,20 @@ get('/activities', function(page, model, params) {
         var myDummy = new Array();
         for(i=0; i<6; i++){
             personObj=new Object();
-            personObj.firstname=Math.random();
+            personObj.content=Math.random();
             myDummy.push(personObj);
-    };
+        };
 
-        model.set('list',myDummy);
+        var test = ([
+                {'content': "test1", "comments": ['test1','test2'] },
+                {'content': "test1", "comments": ['test1','test2'] },
+                {'content': "test1", "comments": ['test1','test2'] },
+                {'content': "test1", "comments": ['test1','test2'] },
+                {'content': "test1", "comments": ['test1','test2'] },
+                {'content': "test1", "comments": ['test1','test2'] }
+        ]);
+
+        model.set('list',test);
 
         // Render will use the model data as well as an optional context object
         page.render({
