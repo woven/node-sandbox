@@ -11,12 +11,13 @@ derby.use(require('../../ui'))
 // ROUTES //
 
 // Derby routes can be rendered on the client and the server
-get('/:roomName?', function(page, model, params) {
+get('/rooms/:roomName?', function(page, model, params) {
   var roomName = params.roomName || 'home'
 
   // Subscribes the model to any updates on this room's object. Calls back
   // with a scoped model equivalent to:
   //   room = model.at('rooms.' + roomName)
+
   model.subscribe('rooms.' + roomName, function(err, room) {
     model.ref('_room', room)
 
@@ -38,6 +39,28 @@ get('/:roomName?', function(page, model, params) {
   })
 })
 
+get('/activities', function(page, model, params) {
+    // var roomName = params.roomName || 'home'
+
+    model.subscribe('activities', function(err, model) {
+
+        // setNull will set a value if the object is currently null or undefined
+
+        var myDummy = new Array();
+        for(i=0; i<6; i++){
+            personObj=new Object();
+            personObj.firstname=Math.random();
+            myDummy.push(personObj);
+    };
+
+        model.set('list',myDummy);
+
+        // Render will use the model data as well as an optional context object
+        page.render({
+            roomName: "Activities Page"
+        })
+    })
+})
 
 // CONTROLLER FUNCTIONS //
 
