@@ -54,15 +54,15 @@ get('/activities', function(page, model, params) {
         };
 
 
-        model.set('list',myDummy);
+        //model.set('list',myDummy);
 
         var test = ([
-                {'content': "test1", "comments": ['test1','test2'] },
-                {'content': "test1", "comments": ['test1','test2'] },
-                {'content': "test1", "comments": ['test1','test2'] },
-                {'content': "test1", "comments": ['test1','test2'] },
-                {'content': "test1", "comments": ['test1','test2'] },
-                {'content': "test1", "comments": ['test1','test2'] }
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
         ]);
 
         model.set('list',test);
@@ -78,23 +78,6 @@ get('/activities', function(page, model, params) {
 // CONTROLLER FUNCTIONS //
 
 ready(function(model) {
-  var timer
 
-  // Functions on the app can be bound to DOM events using the "x-bind"
-  // attribute in a template.
-  this.stop = function() {
-    // Any path name that starts with an underscore is private to the current
-    // client. Nothing set under a private path is synced back to the server.
-    model.set('_stopped', true)
-    clearInterval(timer)
-  }
-
-  this.start = function() {
-    model.set('_stopped', false)
-    timer = setInterval(function() {
-      model.set('_timer', (((+new Date()) - start) / 1000).toFixed(1))
-    }, 100)
-  }
-  this.start()
 
 })

@@ -20,16 +20,18 @@
 <Header:>
   <!-- This is a component defined in the /ui directory -->
     <ui:connectionAlert>
-
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="custom/css/custom.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    
 <Body:>
-
-  <h1>{{roomName}}</h1>
-    <ul>
-        {{#each activities.list as :activity}}
-          <li>{:activity.content}</li>
-        {{/}}
-    </ul>
-
 
   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -93,11 +95,12 @@
               <div class="well">
                   <h4 class="author"><a href="#">David</a></h4>
                   <button class="close">&times;</button>
-                  <div clas="body">
-                      {:activity.firstname}
+                  <div class="body">
+                      {:activity.content}
                   </div>
                   <span class="timeago muted pull-left" title="2012-07-25T19:54:17Z"></span>
                   <ul class="thumbnails comments">
+                      {{#each comments as :comment}}
                       <li class="comment">
                           <hr>
                           <div class="row">
@@ -107,33 +110,16 @@
                                   </a>
                               </div>
                               <div class="span4">
-                                  <h4 class="author"><a href="#">Samer</a></h4>
+                                  <h4 class="author"><a href="#">{:comment.author}</a></h4>
                                   <button class="close">&times;</button>
                                   <div class="body">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                      {:comment.content}
                                   </div>
                                   <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
                               </div>
                           </div>
                       </li>
-                      <li class="comment">
-                          <hr>
-                          <div class="row">
-                              <div class="span1">
-                                  <a href="#" class="thumbnail">
-                                      <img src="custom/images/face-placeholder.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="span4">
-                                  <h4 class="author"><a href="#">Santiago</a></h4>
-                                  <button class="close">&times;</button>
-                                  <div class="body">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                  </div>
-                                  <span class="timeago muted pull-left" title="2012-7-25T16:14:17Z"></span>
-                              </div>
-                          </div>
-                      </li>
+                      {{/}}
                   </ul>
                   <div class="comment">
                       <hr>
@@ -168,3 +154,20 @@
   </footer>
 
   </div> <!-- /container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+
+    <script src="custom/js/jquery.timeago.js"></script>
+    <script src="custom/js/custom.js"></script>
