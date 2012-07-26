@@ -42,42 +42,57 @@ get('/rooms/:roomName?', function(page, model, params) {
 get('/activities', function(page, model, params) {
     // var roomName = params.roomName || 'home'
 
-    model.subscribe('activities', function(err, model) {
+    /*
+     {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+     {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+     {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+     {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
+     */
 
-        // setNull will set a value if the object is currently null or undefined
+    var test = ([
+        {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+        {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
+    ]);
 
-        var myDummy = new Array();
-        for(i=0; i<6; i++){
-            personObj=new Object();
-            personObj.content=Math.random();
-            myDummy.push(personObj);
-        };
+    model.setNull('activities.list',test);
 
+    /*
+    var myDummy = new Array();
+    for(i=0; i<6; i++){
+        personObj=new Object();
+        personObj.content=Math.random();
+        myDummy.push(personObj);
+    };
+    */
 
-        //model.set('list',myDummy);
+    model.on('push','activities.list',function(model){
+        console.log('model.on.push.activites.list');
+    });
 
-        var test = ([
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-                {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
-        ]);
+    model.subscribe('activities.list', function(err, model) {
+        console.log('app.get.subscribe');
+        page.render();
+    });
 
-        model.set('list',test);
-
-
-        // Render will use the model data as well as an optional context object
-        page.render({
-            roomName: "Activities Page"
-        })
-    })
 })
 
 // CONTROLLER FUNCTIONS //
 
 ready(function(model) {
 
+    model.on('push','activities.list',function(model){
+        console.log('ready.model.on.push');
+    });
 
+    app.postmsg = function() {
+        console.log('ready.postmsg');
+        alert("LOGMEHERE");
+
+        $test = model.push("activities.list",
+            {'content': "More Items to be added", "comments": [{content:'MyComment',author:"I'm His User"},{content:'Cool',author:'David'}]}
+        );
+
+        console.log(model.get('activities.list'));
+        console.log("CountOfITems:" + $test);
+    }
 })

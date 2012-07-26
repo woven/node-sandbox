@@ -68,10 +68,16 @@
                   </a>
               </div>
               <div class="span5 textarea">
-                  <textarea class="span5 content" placeholder="What are you up to?"></textarea>
-                  <div class="textarea-controls">
-                      <button class="btn publish pull-right" type="button">Publish!</button>
-                  </div>
+                  <form x-bind="submit: postmsg">
+                      <textarea class="span5 content" placeholder="What are you up to?"></textarea>
+                      <div class="textarea-controls">
+                          <input type="submit" name="mysubmit" class="btn publish pull-right" value="Click!" />
+
+                          <!--
+                          <button class="btn publish pull-right" type="button">Publish!</button>
+                          -->
+                      </div>
+                  </form>
               </div>
           </div>
           <hr>
