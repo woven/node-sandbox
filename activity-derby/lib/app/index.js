@@ -49,13 +49,6 @@ get('/activities', function(page, model, params) {
      {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
      */
 
-    var test = ([
-        {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-        {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
-    ]);
-
-    model.setNull('activities.list',test);
-
     /*
     var myDummy = new Array();
     for(i=0; i<6; i++){
@@ -65,11 +58,15 @@ get('/activities', function(page, model, params) {
     };
     */
 
-    model.on('push','activities.list',function(model){
-        console.log('model.on.push.activites.list');
-    });
+    model.subscribe('activities', function(err, model) {
 
-    model.subscribe('activities.list', function(err, model) {
+        var test = ([
+            {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+            {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
+        ]);
+
+        model.setNull('list',test);
+
         console.log('app.get.subscribe');
         page.render();
     });
