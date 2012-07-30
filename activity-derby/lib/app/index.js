@@ -52,18 +52,6 @@ get('/', function(page, model, params) {
      {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
      */
 
-
-    var myDummy = new Array();
-    var time = new Date().getTime();
-
-    for(i=0; i<4; i++){
-        act=new Object();
-        act.content = "CONTENT IS " + i;
-        act.created = time - i;
-        act.author = 'Woven';
-        myDummy.push(act);
-    };
-
     // @todo: https://github.com/molnarg/js-schema/blob/master/README.md
     // @todo: http://stackoverflow.com/questions/5311334/what-is-the-purpose-of-nodejs-module-exports-and-how-do-you-use-it
     // @todo: http://visionmedia.github.com/masteringnode/book.html
@@ -80,10 +68,23 @@ get('/', function(page, model, params) {
 
     model.set("_newActivity","");
 
-    model.setNull('activities',myDummy);
 
     model.subscribe('activities', function(err, model) {
         //var query = model.query('activities').sort('created', 'desc');
+
+
+        var myDummy = new Array();
+        var time = new Date().getTime();
+
+        for(i=0; i<4; i++){
+            act=new Object();
+            act.content = "CONTENT IS " + i;
+            act.created = time - i;
+            act.author = 'Woven';
+            myDummy.push(act);
+        };
+
+        model.setNull('activities.list',myDummy);
 
         page.render();
     });
@@ -105,7 +106,7 @@ ready(function(model) {
         if(comment){
             time = new Date().getTime();
 
-            model.push("activities",{'content': comment, 'created': time, 'author': 'Woven'});
+            model.push("activities.list",{content: comment, created: time, author: 'Woven'});
         }else{
             alert('Please enter an activity message');
         }
