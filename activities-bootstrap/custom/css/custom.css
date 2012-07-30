@@ -1,12 +1,16 @@
 .well .span4 {
-  width: 330px;
+  width: 250px;
+}
+
+.well .span5 {
+  width: 332px;
 }
 
 .comments.collapsed {
   display: none;
 }
 
-.new .textarea{
+.activity .new .textarea{
   position: relative;
 }
 
@@ -17,7 +21,7 @@
   display: none;
 }*/
 
-.new {
+.activity .new {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
@@ -27,9 +31,12 @@
 }
 
 .well textarea.span4 {
-  width: 320px;
+  width: 240px;
 }
 
+.well textarea.span5 {
+  width: 322px;
+}
 
 .comment .new {
   margin-bottom: 0px;
@@ -49,22 +56,22 @@
 .comment .close {
   position: absolute;
   right: 0px;
-  top: 30px;
+  top: 15px;
 }
 
 .textarea-controls {
   display: none;
   position: absolute;
-  bottom: 10px;
-  border-top: 1px dotted #ccc;
-  width: 100%;
-  background-color: #efefef;
+  bottom: 12px;
+  border-top:  1px solid #CBCBC7;
+  background-color: whitesmoke;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   height: 28px;
-  width: 468px;
-  margin-left: 1px;
+  width: 372px;
+  margin-left: 2px;
   overflow: hidden;
+  padding: 3px;
 }
 
 .well .textarea-controls{
@@ -73,8 +80,154 @@
 
 
 .textarea-controls .publish {
-  border-top-right-radius: 0;
+  /*border-top-right-radius: 0;
   border-top-left-radius: 0; 
   border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;*/
+}
+
+textarea {
+  resize: none;
+}
+
+.new textarea {
+  border: 2px solid #CBCBC7;
+}
+
+.comment .new textarea {
+  border: 1px solid #CBCBC7;
+}
+
+span.triangle2 {
+  background: url(../../custom/images/triangle2px.png) no-repeat #CBCBC7;
+  height: 14px;
+  width: 10px;
+  display: block;
+  text-indent: -9999px;
+  position: absolute;
+  left: -8px;
+  top: 10px;
+}
+
+span.triangle {
+  background: url(../../custom/images/triangle1px.png) no-repeat #CBCBC7;
+  height: 14px;
+  width: 10px;
+  display: block;
+  text-indent: -9999px;
+  position: absolute;
+  left: -8px;
+  top: 18px;
+}
+
+.activity-well {
+  background: none;
+  border: 1px solid #CBCBC7;
+  margin-bottom: 0px;
+  box-shadow: 1px 1px 3px #CBCBC7;
+}
+
+.activity .content {
+  position: relative;
+}
+
+.activity .new .content {
+  position: initial;
+}
+
+.comments-well {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 0px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; 
+  padding-top: 0px
+}
+
+.comments-well .span1 {
+  width: 50px;
+}
+
+.comment .new .photo, .comment .new .publish {
+  display: none;
+}
+
+.comment .new.focused .photo, .comment .new.focused .publish {
+  display: block;
+}
+
+.meta {
+  font-size: 11px;
+  padding-top: 7px;
+}
+
+.meta .comment-link {
+  padding-right: 10px;
+}
+
+.more-comments {
+  text-align: center;
+  padding-top: 2px;
+}
+
+.show-comments-wrapper {
+  border: 1px solid #CBCBC7;
+  padding-bottom: 5px;
+  position: relative;
+  top: -4px;
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: #fcfcfc;
+}
+
+.activity .author {
+  padding-bottom: 7px;
+}
+
+li hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnails li {
+  margin-bottom: 7px;
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .textarea-controls {
+    width: 282px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .textarea-controls {
+    width: 462px;
+  }
+
+  .well .span4 {
+    width: 330px;
+  }
+
+  .well .span5 {
+    width: 420px;
+  }
+
+  .well textarea.span4 {
+    width: 320px;
+  }
+
+  .well textarea.span5 {
+    width: 410px;
+  }
+}
+
+@media (max-width: 767px) {
+  .textarea-controls {
+    width: 462px;
+  }
 }

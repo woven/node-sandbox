@@ -8,7 +8,10 @@ var derby = require('derby')
 derby.use(require('../../ui'))
 
 
-// ROUTES //
+
+process.nextTick(function () {
+    console.log('nextTick callback');
+});
 
 // Derby routes can be rendered on the client and the server
 get('/rooms/:roomName?', function(page, model, params) {
@@ -39,7 +42,7 @@ get('/rooms/:roomName?', function(page, model, params) {
   })
 })
 
-get('/activities', function(page, model, params) {
+get('/', function(page, model, params) {
     // var roomName = params.roomName || 'home'
 
     /*
@@ -49,25 +52,40 @@ get('/activities', function(page, model, params) {
      {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
      */
 
+    // @todo: https://github.com/molnarg/js-schema/blob/master/README.md
+    // @todo: http://stackoverflow.com/questions/5311334/what-is-the-purpose-of-nodejs-module-exports-and-how-do-you-use-it
+    // @todo: http://visionmedia.github.com/masteringnode/book.html
+    // @todo: http://stackoverflow.com/questions/5722638/node-js-rss-module
+    // @todo: http://howtonode.org/understanding-process-next-tick
+
+    // ROUTES //
     /*
-    var myDummy = new Array();
-    for(i=0; i<6; i++){
-        personObj=new Object();
-        personObj.content=Math.random();
-        myDummy.push(personObj);
-    };
+    var test = ([
+        {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
+        {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
+    ]);
     */
 
+    model.set("_newActivity","");
+
+
     model.subscribe('activities', function(err, model) {
+        //var query = model.query('activities').sort('created', 'desc');
 
-        var test = ([
-            {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
-            {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
-        ]);
 
-        model.setNull('list',test);
+        var myDummy = new Array();
+        var time = new Date().getTime();
 
-        console.log('app.get.subscribe');
+        for(i=0; i<4; i++){
+            act=new Object();
+            act.content = "CONTENT IS " + i;
+            act.created = time - i;
+            act.author = 'Woven';
+            myDummy.push(act);
+        };
+
+        model.setNull('activities.list',myDummy);
+
         page.render();
     });
 
@@ -77,19 +95,22 @@ get('/activities', function(page, model, params) {
 
 ready(function(model) {
 
-    model.on('push','activities.list',function(model){
-        console.log('ready.model.on.push');
+    model.on('push','activities',function(model){
+        //console.log('ready.model.on.push');
     });
 
-    app.postmsg = function() {
-        console.log('ready.postmsg');
-        alert("LOGMEHERE");
+    app.postActivity = function (){
+        comment = model.get("_newActivity");
+        author = model.get("_author")
 
-        $test = model.push("activities.list",
-            {'content': "More Items to be added", "comments": [{content:'MyComment',author:"I'm His User"},{content:'Cool',author:'David'}]}
-        );
+        if(comment){
+            time = new Date().getTime();
 
-        console.log(model.get('activities.list'));
-        console.log("CountOfITems:" + $test);
+            model.push("activities.list",{content: comment, created: time, author: 'Woven'});
+        }else{
+            alert('Please enter an activity message');
+        }
+
+        model.set("_newActivity","");
     }
 })

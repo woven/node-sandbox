@@ -1,0 +1,22 @@
+<activityForm:>
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <div class="row new">
+                <div class="span1">
+                    <a href="#" class="thumbnail">
+                        <img src="custom/images/face-placeholder.png" alt="">
+                    </a>
+                </div>
+                <div class="span5 textarea">
+                    <form x-bind="submit: postActivity">
+                        <textarea class="span5 content" placeholder="What are you up to?">{_newActivity}</textarea>
+                        <div class="textarea-controls">
+                        <input type="submit" data-action="postmsg" name="mysubmit" class="btn publish pull-right" value="Publish!" />
+                        </div>
+                     </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
