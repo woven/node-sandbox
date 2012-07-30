@@ -2,6 +2,8 @@
   $('.activity .comments').before('<div class="more-comments"><div class="show-comments-wrapper"><a class="show-comments" href="#">Show comments</a></div></div>');
   $('.activity .comments').addClass('collapsed');
 
+  $('textarea').autosize();  
+
   $('.activity .show-comments').click(function(event){
     var comments = $(this).closest('.activity').find('.comments');
     if(comments.length){
@@ -23,7 +25,10 @@
     var textarea = $(this).closest('.textarea');
     var button = textarea.find('.publish');
     var textareaControls = $(textarea).find('.textarea-controls');
-    $(textarea).find('textarea').animate({height: '70px'});
+    $(textarea).find('textarea').css('padding-bottom','35px');
+    var heightTextarea = $(textarea).find('textarea').css('height');
+    heightTextarea = heightTextarea + 35;
+    $(textarea).find('textarea').animate({height: heightTextarea});
     $(textareaControls).animate({
       opacity: '1',
       
@@ -65,7 +70,8 @@
     var textarea = $(this).closest('.textarea');
     var button = textarea.find('.publish');
     var textareaControls = $(textarea).find('.textarea-controls');
-    $(textarea).find('textarea').animate({height: '36px'});
+    //$(textarea).find('textarea').animate({height: '36px'});
+    $(textarea).find('textarea').css('padding-bottom','initial');
     $(textareaControls).animate({
       opacity: '0',
 
