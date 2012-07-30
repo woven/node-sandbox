@@ -93,10 +93,13 @@ ready(function(model) {
     });
 
     app.postActivity = function (){
-        console.log("here yeah here");
         comment = model.get("_newActivity");
-        $test = model.push("activities.list",
-            {'content': comment, "comments": [{content:'MyComment',author:"I'm His User"},{content:'Cool',author:'David'}]}
-        );
+        if(comment){
+            model.push("activities.list",
+                {'content': comment, "comments": [{content:'MyComment',author:"I'm His User"},{content:'Cool',author:'David'}]}
+            );
+        }
+
+        mode.set("_newActivity");
     }
 })
