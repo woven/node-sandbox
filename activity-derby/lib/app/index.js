@@ -42,7 +42,7 @@ get('/rooms/:roomName?', function(page, model, params) {
   })
 })
 
-get('/activities', function(page, model, params) {
+get('/', function(page, model, params) {
     // var roomName = params.roomName || 'home'
 
     /*
@@ -52,14 +52,17 @@ get('/activities', function(page, model, params) {
      {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
      */
 
-    /*
+
     var myDummy = new Array();
-    for(i=0; i<6; i++){
-        personObj=new Object();
-        personObj.content=Math.random();
-        myDummy.push(personObj);
+    var time = new Date().getTime();
+
+    for(i=0; i<4; i++){
+        act=new Object();
+        act.content = "CONTENT IS " + i;
+        act.created = time - i;
+        act.author = 'Woven';
+        myDummy.push(act);
     };
-    */
 
     // @todo: https://github.com/molnarg/js-schema/blob/master/README.md
     // @todo: http://stackoverflow.com/questions/5311334/what-is-the-purpose-of-nodejs-module-exports-and-how-do-you-use-it
@@ -68,17 +71,20 @@ get('/activities', function(page, model, params) {
     // @todo: http://howtonode.org/understanding-process-next-tick
 
     // ROUTES //
+    /*
     var test = ([
         {'content': "test1", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] },
         {'content': "test5", "comments": [{content:'test1',author:"Samer"},{content:'test3',author:'David'}] }
     ]);
+    */
 
-    model.set("_newActivity","HERE");
+    model.set("_newActivity","");
 
-    model.setNull('activities.list',test);
+    model.setNull('activities',myDummy);
 
     model.subscribe('activities', function(err, model) {
-        console.log('app.get.subscribe');
+        //var query = model.query('activities').sort('created', 'desc');
+
         page.render();
     });
 
@@ -88,18 +94,24 @@ get('/activities', function(page, model, params) {
 
 ready(function(model) {
 
-    model.on('push','activities.list',function(model){
-        console.log('ready.model.on.push');
+    model.on('push','activities',function(model){
+        //console.log('ready.model.on.push');
     });
 
     app.postActivity = function (){
         comment = model.get("_newActivity");
+
         if(comment){
-            model.push("activities.list",
-                {'content': comment, "comments": [{content:'MyComment',author:"I'm His User"},{content:'Cool',author:'David'}]}
+            time = new Date().getTime();
+
+            model.push("activities",[
+                {'content': comment, 'created': time}
+                ]
             );
+        }else{
+            alert('Please enter an activity message');
         }
 
-        mode.set("_newActivity");
+        model.set("_newActivity","");
     }
 })

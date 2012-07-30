@@ -65,7 +65,7 @@
   <div class="span6">
 
   <ul class="thumbnails activities">
-  {#each activities.list as :activity}
+  {#each activities as :activity}
     <li class="activity">
       <div class="row">
           <div class="span1">
@@ -75,50 +75,12 @@
           </div>
           <div class="span5">
               <div class="well">
-                  <h4 class="author"><a href="#">David</a></h4>
+                  <h4 class="author"><a href="#">{:activity.author}</a></h4>
                   <button class="close">&times;</button>
                   <div class="body">
                       {:activity.content}
                   </div>
-                  <span class="timeago muted pull-left" title="2012-07-25T19:54:17Z"></span>
-                  <ul class="thumbnails comments">
-                      {#each comments as :comment}
-                      <li class="comment">
-                          <hr>
-                          <div class="row">
-                              <div class="span1">
-                                  <a href="#" class="thumbnail">
-                                      <img src="custom/images/face-placeholder.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="span4">
-                                  <h4 class="author"><a href="#">{:comment.author}</a></h4>
-                                  <button class="close">&times;</button>
-                                  <div class="body">
-                                      {:comment.content}
-                                  </div>
-                                  <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
-                              </div>
-                          </div>
-                      </li>
-                      {/}
-                  </ul>
-                  <div class="comment">
-                      <hr>
-                      <div class="row new">
-                          <div class="span1">
-                              <a href="#" class="thumbnail">
-                                  <img src="custom/images/face-placeholder.png" alt="">
-                              </a>
-                          </div>
-                          <div class="span4 textarea">
-                              <textarea class="span4 content" placeholder="What are you up to?"></textarea>
-                              <div class="textarea-controls">
-                                  <button class="btn publish pull-right" type="button">Publish!</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                  <span class="timeago muted pull-left" title="{:activity.created}"></span>
               </div>
           </div>
       </div>
