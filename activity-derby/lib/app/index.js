@@ -100,14 +100,12 @@ ready(function(model) {
 
     app.postActivity = function (){
         comment = model.get("_newActivity");
+        author = model.get("_author")
 
         if(comment){
             time = new Date().getTime();
 
-            model.push("activities",[
-                {'content': comment, 'created': time}
-                ]
-            );
+            model.push("activities",{'content': comment, 'created': time, 'author': 'Woven'});
         }else{
             alert('Please enter an activity message');
         }
