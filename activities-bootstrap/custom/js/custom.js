@@ -37,8 +37,6 @@
     var photo = $(newComment).find('.photo');
     var textareaWrapper = $(newComment).find('.textarea');
     if(!$(newComment).hasClass('focused')){
-      $(button).show();
-      $(photo).show();
       $(this).removeClass('span5');
       $(this).addClass('span4');
       $(textareaWrapper).removeClass('span5');
@@ -54,8 +52,6 @@
     var photo = $(newComment).find('.photo');
     var textareaWrapper = $(newComment).find('.textarea');
     if($(newComment).hasClass('focused')){
-      $(button).hide();
-      $(photo).hide();
       $(this).addClass('span5');
       $(this).removeClass('span4');
       $(textareaWrapper).addClass('span5');
