@@ -59,18 +59,19 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row activity">
         <div class="span6">
-          <div class="row new">
+          <div class="row new new-activity">
             <div class="span1">
               <a href="#" class="thumbnail">
                 <img src="custom/images/face-placeholder.png" alt="">
               </a>
             </div>
             <div class="span5 textarea">
+              <span class="triangle2"> </span>
               <textarea class="span5 content" placeholder="What are you up to?"></textarea>
               <div class="textarea-controls">
-                <button class="btn publish pull-right" type="button">Publish!</button>
+                <button class="btn btn-primary publish pull-right" type="button">Publish!</button>
               </div>
             </div>
           </div>
@@ -84,20 +85,26 @@
           <ul class="thumbnails activities">
             <li class="activity">
               <div class="row">
-                <div class="span1">
+                <div class="span1 photo">
                   <a href="#" class="thumbnail">
                     <img src="custom/images/face-placeholder.png" alt="">
                   </a>
                 </div>
-                <div class="span5">
-                  <div class="well">
-                    <h4 class="author"><a href="#">David</a></h4>
+                <div class="span5 content">
+                  <span class="triangle"> </span>
+                  <div class="well activity-well">
+                    <h4 class="author"><a href="#">David Notik</a></h4>
                     <button class="close">&times;</button>
                     <div clas="body">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <span class="timeago muted pull-left" title="2012-07-25T19:54:17Z"></span>
-                    <ul class="thumbnails comments">
+                    <div class="meta">
+                      <a class="comment-link" href="#">Comment</a>
+                      <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                    </div>
+                  </div>
+                  <div class="well comments-well">
+                  <ul class="thumbnails comments">
                       <li class="comment">
                         <hr>
                         <div class="row">
@@ -107,12 +114,14 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Samer</a></h4>
+                            <h4 class="author"><a href="#">Samer Ali</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
@@ -125,29 +134,29 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Santiago</a></h4>
+                            <h4 class="author"><a href="#">Santiago Rios</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-7-25T16:14:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
                     </ul>
                     <div class="comment">
                       <hr>
-                      <div class="row new">
-                        <div class="span1">
+                      <div class="row new new-comment">
+                        <div class="span1 photo">
                           <a href="#" class="thumbnail">
                             <img src="custom/images/face-placeholder.png" alt="">
                           </a>
                         </div>
-                        <div class="span4 textarea">
-                          <textarea class="span4 content" placeholder="What are you up to?"></textarea>
-                          <div class="textarea-controls">
-                            <button class="btn publish pull-right" type="button">Publish!</button>
-                          </div>
+                        <div class="span5 textarea">
+                          <textarea class="span5 content" placeholder="What are you up to?"></textarea>
+                          <button class="btn btn-success publish pull-right" type="button">Publish!</button>
                         </div>
                       </div>
                     </div>
@@ -157,20 +166,26 @@
             </li>
             <li class="activity">
               <div class="row">
-                <div class="span1">
+                <div class="span1 photo">
                   <a href="#" class="thumbnail">
                     <img src="custom/images/face-placeholder.png" alt="">
                   </a>
                 </div>
-                <div class="span5">
-                  <div class="well">
-                    <h4 class="author"><a href="#">David</a></h4>
+                <div class="span5 content">
+                  <span class="triangle"> </span>
+                  <div class="well activity-well">
+                    <h4 class="author"><a href="#">David Notik</a></h4>
                     <button class="close">&times;</button>
                     <div clas="body">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <span class="timeago muted pull-left" title="2012-07-25T15:54:17Z"></span>
-                    <ul class="thumbnails comments">
+                    <div class="meta">
+                      <a class="comment-link" href="#">Comment</a>
+                      <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                    </div>
+                  </div>
+                  <div class="well comments-well">
+                  <ul class="thumbnails comments">
                       <li class="comment">
                         <hr>
                         <div class="row">
@@ -180,12 +195,14 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Samer</a></h4>
+                            <h4 class="author"><a href="#">Samer Ali</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
@@ -198,29 +215,29 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Santiago</a></h4>
+                            <h4 class="author"><a href="#">Santiago Rios</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-7-25T16:14:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
                     </ul>
                     <div class="comment">
                       <hr>
-                      <div class="row new">
-                        <div class="span1">
+                      <div class="row new new-comment">
+                        <div class="span1 photo">
                           <a href="#" class="thumbnail">
                             <img src="custom/images/face-placeholder.png" alt="">
                           </a>
                         </div>
-                        <div class="span4 textarea">
-                          <textarea class="span4 content" placeholder="What are you up to?"></textarea>
-                          <div class="textarea-controls">
-                            <button class="btn publish pull-right" type="button">Publish!</button>
-                          </div>
+                        <div class="span5 textarea">
+                          <textarea class="span5 content" placeholder="What are you up to?"></textarea>
+                          <button class="btn btn-success publish pull-right" type="button">Publish!</button>
                         </div>
                       </div>
                     </div>
@@ -230,93 +247,26 @@
             </li>
             <li class="activity">
               <div class="row">
-                <div class="span1">
+                <div class="span1 photo">
                   <a href="#" class="thumbnail">
                     <img src="custom/images/face-placeholder.png" alt="">
                   </a>
                 </div>
-                <div class="span5">
-                  <div class="well">
-                    <h4 class="author"><a href="#">David</a></h4>
+                <div class="span5 content">
+                  <span class="triangle"> </span>
+                  <div class="well activity-well">
+                    <h4 class="author"><a href="#">David Notik</a></h4>
                     <button class="close">&times;</button>
                     <div clas="body">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <span class="timeago muted pull-left" title="2012-07-25T15:54:17Z"></span>
-                    <ul class="thumbnails comments">
-                      <li class="comment">
-                        <hr>
-                        <div class="row">
-                          <div class="span1">
-                            <a href="#" class="thumbnail">
-                              <img src="custom/images/face-placeholder.png" alt="">
-                            </a>
-                          </div>
-                          <div class="span4">
-                            <h4 class="author"><a href="#">Samer</a></h4>
-                            <button class="close">&times;</button>
-                            <div class="body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                            <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="comment">
-                        <hr>
-                        <div class="row">
-                          <div class="span1">
-                            <a href="#" class="thumbnail">
-                              <img src="custom/images/face-placeholder.png" alt="">
-                            </a>
-                          </div>
-                          <div class="span4">
-                            <h4 class="author"><a href="#">Santiago</a></h4>
-                            <button class="close">&times;</button>
-                            <div class="body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                            <span class="timeago muted pull-left" title="2012-7-25T16:14:17Z"></span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                    <div class="comment">
-                      <hr>
-                      <div class="row new">
-                        <div class="span1">
-                          <a href="#" class="thumbnail">
-                            <img src="custom/images/face-placeholder.png" alt="">
-                          </a>
-                        </div>
-                        <div class="span4 textarea">
-                          <textarea class="span4 content" placeholder="What are you up to?"></textarea>
-                          <div class="textarea-controls">
-                            <button class="btn publish pull-right" type="button">Publish!</button>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="meta">
+                      <a class="comment-link" href="#">Comment</a>
+                      <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
                     </div>
                   </div>
-                </div>
-              </div>
-            </li>
-            <li class="activity">
-              <div class="row">
-                <div class="span1">
-                  <a href="#" class="thumbnail">
-                    <img src="custom/images/face-placeholder.png" alt="">
-                  </a>
-                </div>
-                <div class="span5">
-                  <div class="well">
-                    <h4 class="author"><a href="#">David</a></h4>
-                    <button class="close">&times;</button>
-                    <div clas="body">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-                    <span class="timeago muted pull-left" title="2012-07-25T15:54:17Z"></span>
-                    <ul class="thumbnails comments">
+                  <div class="well comments-well">
+                  <ul class="thumbnails comments">
                       <li class="comment">
                         <hr>
                         <div class="row">
@@ -326,12 +276,14 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Samer</a></h4>
+                            <h4 class="author"><a href="#">Samer Ali</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-07-25T16:04:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
@@ -344,29 +296,29 @@
                             </a>
                           </div>
                           <div class="span4">
-                            <h4 class="author"><a href="#">Santiago</a></h4>
+                            <h4 class="author"><a href="#">Santiago Rios</a></h4>
                             <button class="close">&times;</button>
                             <div class="body">
                               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
-                            <span class="timeago muted pull-left" title="2012-7-25T16:14:17Z"></span>
+                            <div class="meta">
+                              <a href="#"class="timeago muted" title="2012-07-25T19:54:17Z"> </a>
+                            </div>
                           </div>
                         </div>
                       </li>
                     </ul>
                     <div class="comment">
                       <hr>
-                      <div class="row new">
-                        <div class="span1">
+                      <div class="row new new-comment">
+                        <div class="span1 photo">
                           <a href="#" class="thumbnail">
                             <img src="custom/images/face-placeholder.png" alt="">
                           </a>
                         </div>
-                        <div class="span4 textarea">
-                          <textarea class="span4 content" placeholder="What are you up to?"></textarea>
-                          <div class="textarea-controls">
-                            <button class="btn publish pull-right" type="button">Publish!</button>
-                          </div>
+                        <div class="span5 textarea">
+                          <textarea class="span5 content" placeholder="What are you up to?"></textarea>
+                          <button class="btn btn-success publish pull-right" type="button">Publish!</button>
                         </div>
                       </div>
                     </div>
