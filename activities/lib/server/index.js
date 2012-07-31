@@ -12,8 +12,13 @@ var http = require('http')
 var expressApp = express()
   , server = module.exports = http.createServer(expressApp)
 
-derby.use(derby.logPlugin)
-var store = derby.createStore({listen: server})
+derby.use(derby.logPlugin);
+
+derby.use(require('racer-db-mongo'));
+
+var store = derby.createStore({listen:server,
+        db:{type:'Mongo', uri:'mongodb://localhost/test'}}
+);
 
 var ONE_YEAR = 1000 * 60 * 60 * 24 * 365
   , root = path.dirname(path.dirname(__dirname))
