@@ -16,9 +16,12 @@ derby.use(derby.logPlugin);
 
 derby.use(require('racer-db-mongo'));
 
+/* Mongo DB connection
 var store = derby.createStore({listen:server,
         db:{type:'Mongo', uri:'mongodb://localhost/test'}}
-);
+);*/
+
+var store = derby.createStore({listen:server});
 
 var ONE_YEAR = 1000 * 60 * 60 * 24 * 365
   , root = path.dirname(path.dirname(__dirname))

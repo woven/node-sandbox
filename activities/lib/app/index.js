@@ -13,6 +13,7 @@ process.nextTick(function () {
 });
 */
 
+
 get('/', function(page, model, params) {
 
     // @todo: https://github.com/molnarg/js-schema/blob/master/README.md
@@ -23,12 +24,26 @@ get('/', function(page, model, params) {
 
    //set private variable to empty
     model.set("_newActivity","");
-    model.setNull("vars.set1","cool55");
-    
-    model.subscribe('activities', function(err, activity) {
-        //var query = model.query('activities').sort('created', 'desc')
+
+    var myDummy = new Array();
+    var time = new Date().getTime();
+
+    for(i=0; i<4; i++){
+        act=new Object();
+        act.content = "CONTENT IS " + i;
+        act.created = time - i;
+        act.author = 'Woven';
+        myDummy.push(act);
+    };
+
+    model.setNull('activities.list',myDummy);
+
+    var list = model.at('activities.list').sort("created","desc").get();
+    console.log(list);
+
+    model.subscribe(list, function(err, activity) {
         //activity.set('list',new Array());
-        console.log(model.get("vars"));
+        //console.log(query.get());
         page.render();
     });
 
