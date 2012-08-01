@@ -36,15 +36,21 @@ get('/', function(page, model, params) {
         myDummy.push(act);
     };
 
-    model.setNull('activities.list',myDummy);
+    //model.setNull('activities.list',new Array());
 
-    var list = model.at('activities.list').sort("created","desc").get();
-    console.log(list);
+    model.subscribe('activities', function(err, activity) {
 
-    model.subscribe(list, function(err, activity) {
-        //activity.set('list',new Array());
-        //console.log(query.get());
-        page.render();
+        var list = model.at('activities');
+        //list.sort("created","desc");
+        console.log(list.get());
+        lcs = list.get();
+        model.ref('_list',list);
+
+        //console.log(list);
+
+        //console.log(activity.sort(['created','desc']).get());
+
+        page.render({'myvar': list.get()});
     });
 
 })
@@ -59,12 +65,12 @@ ready(function(model) {
 
     app.postActivity = function (){
         comment = model.get("_newActivity");
-        author = model.get("_author")
+        author = model.get("_author");
 
         if(comment){
             time = new Date().getTime();
 
-            model.push("activities.list",{content: comment, created: time, author: 'Woven'});
+            model.add("activities",{content: comment, created: time, author: 'Woven'});
         }else{
             alert('Please enter an activity message');
         }
