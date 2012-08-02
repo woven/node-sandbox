@@ -44,6 +44,7 @@ get('/', function(page, model, params) {
 
 
         var list = model.at('activities').query('activities').getDesc();
+        model.ref('_list',list);
         //console.log(posts);
         //model.ref('_list',posts);
 
