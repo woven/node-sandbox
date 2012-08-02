@@ -1,0 +1,8 @@
+{
+    "name": "nodejs",
+    "description": "Test Node.js project",
+    "version": "0.1.0",
+    "author": "David Notik",
+    "dependencies": {},
+    "devDependencies": {}
+}
