@@ -1,3 +1,15 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.navbar-inner{
+  opacity: 0.8;
+  background: #EEE;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 .well .span4 {
   width: 250px;
 }
@@ -27,7 +39,23 @@
 }
 
 .navbar .company.brand {
-  float: right;
+/*  float: right;*/
+  background: url(../../custom/images/w-logo-small.png) no-repeat;
+  height: 30px;
+  width: 43px;
+  margin-top: -5px;
+  text-indent: 35px;
+}
+
+.navbar .brand {
+  font-family: "Verdana", "Helvetica", Arial, sans-serif;
+  text-shadow: 0.1em 0.1em 0.4em #999;
+  font-size: 25px;
+}
+
+.navbar .brand b.caret {
+  margin-top: 15px;
+  margin-left: 2px;
 }
 
 .well textarea.span4 {
@@ -196,6 +224,40 @@ li hr {
   margin-bottom: 7px;
 }
 
+.navbar .nav > li > a {
+  color: #999;
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
+
+.navbar .nav > li > a:hover {
+  color: #333;
+}
+
+.navbar .nav li.dropdown .dropdown-toggle .caret {
+  border-top-color: gray;
+  border-bottom-color: gray;
+}
+
+.nav li.dropdown.open a:hover .caret {
+  border-top-color: black;
+  border-bottom-color: black;
+}
+
+.page-header h1{
+  color: #4A4A4A;
+  line-height: 22px;
+  font-size: 18px;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+}
+
+.tabs-left ul.nav-tabs {
+  width: 100%;
+  padding-top: 15px;
+  margin-top: -19px;
+  min-height: 110px;
+}
+
 
 @media (min-width: 768px) and (max-width: 979px) {
   .textarea-controls {
@@ -231,3 +293,4 @@ li hr {
     width: 462px;
   }
 }
+
