@@ -5,7 +5,6 @@ var derby = require('derby')
   , ready = app.ready
   , start = +new Date()
 
-derby.use(require('../../ui'))
 
 /*
 process.nextTick(function () {
@@ -38,19 +37,28 @@ get('/', function(page, model, params) {
 
     //model.setNull('activities.list',new Array());
 
-    model.subscribe('activities', function(err, activity) {
 
-        var list = model.at('activities');
+    model.subscribe('activities', function(err, activity) {
         //list.sort("created","desc");
-        console.log(list.get());
-        lcs = list.get();
-        model.ref('_list',list);
+        //console.log(list.get());
+
+
+        var list = model.at('activities').query('activities').getDesc();
+        //console.log(posts);
+        //model.ref('_list',posts);
+
+
+        //var posts = model.filter('activities').sort("created","desc");
+        //console.log(posts.get());
+
+        //list = model.query('activities').sort("created","desc");
+        //model.ref('_list',list);
 
         //console.log(list);
 
         //console.log(activity.sort(['created','desc']).get());
 
-        page.render({'myvar': list.get()});
+        page.render();
     });
 
 })

@@ -21,6 +21,9 @@ var store = derby.createStore({listen:server,
         db:{type:'Mongo', uri:'mongodb://localhost/test'}}
 );
 
+store.query.expose('activities','getDesc',function(){
+    return this.sort(["created","desc"]);
+});
 
 /*
 var store = derby.createStore({listen:server});
