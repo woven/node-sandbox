@@ -255,7 +255,11 @@ li hr {
   width: 100%;
   padding-top: 15px;
   margin-top: -19px;
-  min-height: 110px;
+  min-height: 140px;
+}
+
+.main .past-activities {
+  border-left: 1px solid #DDD;
 }
 
 
